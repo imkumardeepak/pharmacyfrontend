@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pharmacy Green + Trust Blue Theme - Light Mode */
+    --background: 150 30% 98%;
+    --foreground: 150 40% 15%;
+    --muted: 150 20% 96%;
+    --muted-foreground: 150 15% 45%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 40% 15%;
+    --primary: 152 55% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 202 75% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 150 25% 94%;
+    --accent-foreground: 150 40% 15%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 15% 88%;
+    --sidebar: 150 25% 96%;
+    --sidebar-foreground: 150 40% 15%;
+  }
+  .dark {
+    /* Dark Mode - Enhanced Contrast */
+    --background: 150 35% 6%;
+    --foreground: 150 20% 95%;
+    --muted: 150 25% 12%;
+    --muted-foreground: 150 15% 65%;
+    --card: 150 30% 8%;
+    --card-foreground: 150 20% 95%;
+    --primary: 152 55% 48%;
+    --primary-foreground: 150 35% 6%;
+    --secondary: 202 75% 52%;
+    --secondary-foreground: 150 35% 6%;
+    --accent: 150 25% 12%;
+    --accent-foreground: 150 20% 95%;
+    --destructive: 0 63% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 25% 16%;
+    --sidebar: 150 30% 8%;
+    --sidebar-foreground: 150 20% 95%;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", "Inter", system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 32;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Tabular numbers for dense data tables */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for accessibility */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
