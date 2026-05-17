@@ -23,18 +23,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
-          cache: "npm"
-          cache-dependency-path: frontend/package-lock.json
 
       - name: Install Dependencies
-        run: |
-          cd frontend
-          npm ci
+        run: npm ci
 
       - name: Build
-        run: |
-          cd frontend
-          npm run build
+        run: npm run build
         env:
           VITE_API_URL: https://pharmabackend-g4ebfeegh9gthwgr.centralindia-01.azurewebsites.net
           VITE_APP_NAME: PharmaERP
@@ -47,7 +41,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "frontend"
+          app_location: "/"
           api_location: ""
           output_location: "dist"
 
